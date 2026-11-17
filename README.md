@@ -2,7 +2,7 @@
 
 Monitoreo de variables climáticas, cobertura del suelo y pendiente en el departamento del Cauca (Colombia) con Google Earth Engine (GEE) y Google Colab, y generación de **mapas de zonas aptas para café** y **mapas de riesgo de roya y muerte descendente (Phoma)** a partir de características de clima y suelo.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TU_USUARIO/cauca-clima-gee/blob/main/notebooks/01_area_estudio.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ajaramillola1985/cauca-clima-gee/blob/main/06_aptitud_riesgo_cafe.ipynb)
 
 ## Objetivos
 
@@ -35,33 +35,12 @@ Monitoreo de variables climáticas, cobertura del suelo y pendiente en el depart
 
 ```
 cauca-clima-gee/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── config/
-│   ├── config.yaml            # proyecto GEE, fechas, escala, CRS
-│   └── criterios_aptitud.yaml # rangos y pesos por cultivo o uso
-├── notebooks/
-│   ├── 01_area_estudio.ipynb
-│   ├── 02_variables_climaticas.ipynb
-│   ├── 03_cobertura_suelo.ipynb
-│   ├── 04_pendiente_relieve.ipynb
-│   ├── 05_caracteristicas_clima_suelo.ipynb
-│   └── 06_aptitud_riesgo_cafe.ipynb
-├── src/
-│   ├── area.py        # carga del límite del Cauca
-│   ├── clima.py       # precipitación, temperatura, anomalías
-│   ├── cobertura.py   # land cover y cambios
-│   ├── relieve.py     # elevación, pendiente, orientación
-│   ├── suelo.py       # propiedades del suelo
-│   ├── aptitud.py     # reclasificación y superposición ponderada
-│   ├── riesgo.py      # índices de riesgo
-│   └── exportar.py    # exportación a Drive / assets
-├── data/              # tablas pequeñas (CSV); los ráster NO se suben
-└── outputs/
-    ├── mapas/
-    └── tablas/
+├── README.md                     ← este archivo
+├── LICENSE                       ← licencia MIT del código
+└── 06_aptitud_riesgo_cafe.ipynb  ← aptitud para café y riesgo de roya y Phoma (notebook principal)
 ```
+
+El notebook se abre en Colab con el botón **Open in Colab** del inicio. Si lo mueves a otra carpeta o le cambias el nombre, actualiza la ruta del enlace aquí y en la primera celda del notebook.
 
 ## Módulos del proyecto
 
@@ -127,26 +106,26 @@ Cada índice se clasifica en muy bajo, bajo, medio, alto y muy alto. Los umbrale
 - Cuenta de Google con acceso a [Earth Engine](https://earthengine.google.com/) y un proyecto de Google Cloud registrado.
 - Google Colab.
 
-`requirements.txt`:
+Paquetes de Python (Colab ya trae casi todos; el notebook instala `rasterio` cuando lo necesita):
 ```
 earthengine-api
 geemap
 pandas
 geopandas
 matplotlib
-pyyaml
+rasterio
 ```
 
 ## Inicio rápido en Colab
 
 ```python
-!git clone https://github.com/TU_USUARIO/cauca-clima-gee.git
+!git clone https://github.com/ajaramillola1985/cauca-clima-gee.git
 %cd cauca-clima-gee
-!pip install -q -r requirements.txt
+!pip install -q earthengine-api geemap pandas geopandas matplotlib rasterio
 
 import ee, geemap
 ee.Authenticate()
-ee.Initialize(project='TU_PROYECTO_GEE')
+ee.Initialize(project='sig-unal-2026')
 
 # Límite del Cauca
 cauca = (ee.FeatureCollection('FAO/GAUL/2015/level1')
@@ -187,4 +166,4 @@ m
 
 ## Licencia
 
-MIT (o la que prefieras). Los datos conservan las licencias de sus fuentes originales.
+El código se distribuye bajo licencia MIT (ver `LICENSE`). Los datos conservan las licencias de sus fuentes originales.
