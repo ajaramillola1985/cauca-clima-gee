@@ -11,8 +11,8 @@ Este proyecto usa Google Earth Engine (GEE) y Google Colab para el departamento 
 
 | Notebook | Abrir | Qué hace |
 |---|---|---|
-| `06_aptitud_riesgo_cafe.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TU_USUARIO/cauca-clima-gee/blob/main/notebooks/06_aptitud_riesgo_cafe.ipynb) | Calcula la aptitud, el riesgo anual de roya y Phoma sobre el área sembrada y la sensibilidad a los pesos. Exporta mapas en PNG y GeoTIFF |
-| `07_riesgo_mensual_alertas.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TU_USUARIO/cauca-clima-gee/blob/main/notebooks/07_riesgo_mensual_alertas.ipynb) | Calcula el riesgo mes a mes con CHIRPS y ERA5-Land, arma la serie de los últimos 24 meses, hace los mapas del último mes y emite alertas por municipio en CSV |
+| `06_aptitud_riesgo_cafe.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ajaramillola1985/cauca-clima-gee/blob/main/notebooks/06_aptitud_riesgo_cafe.ipynb) | Calcula la aptitud, el riesgo anual de roya y Phoma sobre el área sembrada y la sensibilidad a los pesos. Exporta mapas en PNG y GeoTIFF |
+| `07_riesgo_mensual_alertas.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ajaramillola1985/cauca-clima-gee/blob/main/notebooks/07_riesgo_mensual_alertas.ipynb) | Calcula el riesgo mes a mes con CHIRPS y ERA5-Land, arma la serie de los últimos 24 meses, hace los mapas del último mes y emite alertas por municipio en CSV |
 
 Los dos notebooks funcionan por separado. En cada uno hay que poner el ID del proyecto de Earth Engine en la primera celda y ejecutar las celdas en orden. Para conectarse se usa `auth_mode='notebook'`, es decir, un enlace y un código. Al generar el token no hay que marcar la opción de solo lectura.
 
